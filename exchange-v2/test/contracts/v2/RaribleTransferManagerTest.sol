@@ -35,4 +35,8 @@ contract RaribleTransferManagerTest is RaribleTransferManager, OrderValidator, T
     function encodeV2(LibOrderDataV2.DataV2 memory data) pure external returns (bytes memory) {
         return abi.encode(data);
     }
+
+    function encodeOriginFeeIntoUint(address account, uint96 value) external pure returns(uint){
+        return (uint(value) << 160) + uint(account);
+    }
 }

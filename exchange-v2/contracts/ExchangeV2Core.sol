@@ -36,6 +36,100 @@ abstract contract ExchangeV2Core is Initializable, OwnableUpgradeable, AssetMatc
         emit Cancel(orderKeyHash);
     }
 
+    struct DealBuy {
+        address seller;
+        address token;
+        bytes4 assetType;
+        uint tokenId;
+        uint tokenAmount;
+        uint price;
+        uint salt;
+        bytes signature;
+    }
+    struct DealAcceptBid {
+        address buyer;
+        address tokenPayment;
+        address tokenNft;
+        bytes4 assetType;
+        uint tokenId;
+        uint amount;
+        uint price;
+        uint salt;
+        bytes signature;
+    }
+
+    function directBuy(
+        DealBuy memory deal,
+        uint[4] memory ordersData
+    ) external payable {
+        bytes memory nftAssetData = abi.encode(deal.token, deal.tokenId);
+        LibAsset.Asset memory nft = LibAsset.Asset(LibAsset.AssetType(deal.assetType, nftAssetData), deal.tokenAmount);
+        LibAsset.Asset memory payment = LibAsset.Asset(LibAsset.AssetType(LibAsset.ETH_ASSET_CLASS, ""), deal.price);
+        bytes memory dataV2BytesNft;
+        bytes memory dataV2BytesPayment;
+        (dataV2BytesNft, dataV2BytesPayment) = formDataOrders(ordersData);
+
+        LibOrder.Order memory orderLeft = LibOrder.Order(deal.seller, nft, address(0), payment, deal.salt, 0, 0, LibOrderDataV2.V2, dataV2BytesNft);
+        LibOrder.Order memory orderRight = LibOrder.Order(msg.sender, payment, address(0), nft, 0, 0, 0, LibOrderDataV2.V2, dataV2BytesPayment);
+        validateFull(orderLeft, deal.signature);
+        validateFull(orderRight, "");
+        if (orderLeft.taker != address(0)) {
+            require(orderRight.maker == orderLeft.taker, "leftOrder.taker verification failed");
+        }
+        if (orderRight.taker != address(0)) {
+            require(orderRight.taker == orderLeft.maker, "rightOrder.taker verification failed");
+        }
+        matchAndTransfer(orderLeft, orderRight);
+    }
+
+    function directAcceptBid(
+        DealAcceptBid memory deal,
+        uint[4] memory ordersData
+    ) external payable {
+        bytes memory paymentAssetData = abi.encode(deal.tokenPayment);
+        bytes memory nftAssetData = abi.encode(deal.tokenNft, deal.tokenId);
+        LibAsset.Asset memory payment = LibAsset.Asset(LibAsset.AssetType(LibAsset.ERC20_ASSET_CLASS, paymentAssetData), deal.price);
+        LibAsset.Asset memory nft = LibAsset.Asset(LibAsset.AssetType(deal.assetType, nftAssetData), deal.amount);
+        bytes memory dataV2BytesNft;
+        bytes memory dataV2BytesPayment;
+        (dataV2BytesNft, dataV2BytesPayment) = formDataOrders(ordersData);
+
+        LibOrder.Order memory orderLeft = LibOrder.Order(deal.buyer, payment, address(0), nft, deal.salt, 0, 0, LibOrderDataV2.V2, dataV2BytesPayment);
+        LibOrder.Order memory orderRight = LibOrder.Order(msg.sender, nft, address(0), payment, 0, 0, 0, LibOrderDataV2.V2, dataV2BytesNft);
+        validateFull(orderLeft, deal.signature);
+        validateFull(orderRight, "");
+        if (orderLeft.taker != address(0)) {
+            require(orderRight.maker == orderLeft.taker, "leftOrder.taker verification failed");
+        }
+        if (orderRight.taker != address(0)) {
+            require(orderRight.taker == orderLeft.maker, "rightOrder.taker verification failed");
+        }
+        matchAndTransfer(orderLeft, orderRight);
+    }
+
+    function formDataOrders(uint[4] memory ordersData) internal returns (bytes memory dataV2BytesNft, bytes memory dataV2BytesPayment) {
+        LibPart.Part[] memory sellPayout = new LibPart.Part[](1);
+        sellPayout[0].account = address(ordersData[0]);
+        sellPayout[0].value = uint96(ordersData[0] >> 160);
+
+        LibPart.Part[] memory buyPayout = new LibPart.Part[](1);
+        buyPayout[0].account = address(ordersData[1]);
+        buyPayout[0].value = uint96(ordersData[1] >> 160);
+
+        LibPart.Part[] memory sellOrigin = new LibPart.Part[](1);
+        sellOrigin[0].account = address(ordersData[2]);
+        sellOrigin[0].value = uint96(ordersData[2] >> 160);
+
+        LibPart.Part[] memory buyOrigin = new LibPart.Part[](1);
+        buyOrigin[0].account = address(ordersData[3]);
+        buyOrigin[0].value = uint96(ordersData[3] >> 160);
+
+        LibOrderDataV2.DataV2 memory dataNft = LibOrderDataV2.DataV2(sellPayout, sellOrigin, true);
+        LibOrderDataV2.DataV2 memory dataPayment = LibOrderDataV2.DataV2(buyPayout, buyOrigin, true);
+        dataV2BytesNft = abi.encode(dataNft);
+        dataV2BytesPayment = abi.encode(dataPayment);
+    }
+
     function matchOrders(
         LibOrder.Order memory orderLeft,
         bytes memory signatureLeft,
