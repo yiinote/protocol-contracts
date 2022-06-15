@@ -1,4 +1,4 @@
-const UpgradeableBeacon = artifacts.require("UpgradeableBeacon.sol");
+const UpgradeableBeacon = artifacts.require("ERC721RaribleMinimalBeacon.sol");
 const ERC721RaribleMinimal = artifacts.require("ERC721RaribleMinimal.sol");
 const ERC721RaribleFactoryC2 = artifacts.require("ERC721RaribleFactoryC2.sol");
 
@@ -10,6 +10,7 @@ const zeroAddress = "0x0000000000000000000000000000000000000000";
 contract("Test factories minimal", accounts => {
 
 	const tokenOwner = accounts[1];
+  const salt_gas_usage = 2;
   const salt = 3;
 
   let factory;
@@ -19,11 +20,16 @@ contract("Test factories minimal", accounts => {
 		factory = await ERC721RaribleFactoryC2.new(beacon.address, zeroAddress, zeroAddress);
 	})
 
+	it("Gas usage factory.createToken erc721", async () => {
+		const resultCreateToken = await factory.createToken("name", "RARI", "https://ipfs.rarible.com", "https://ipfs.rarible.com", [], salt_gas_usage, {from: tokenOwner, gasPrice: 0});
+    console.log("Gas usage factory.createToken erc721 : ", resultCreateToken.receipt.gasUsed);
+	})
+
 	it("should create erc721 private from factory, getAddress works correctly", async () => {
     let proxy;
     const addressBeforeDeploy = await factory.getAddress("name", "RARI", "https://ipfs.rarible.com", "https://ipfs.rarible.com", [], salt)
 
-		const resultCreateToken = await factory.createToken("name", "RARI", "https://ipfs.rarible.com", "https://ipfs.rarible.com", [], salt, {from: tokenOwner});
+		const resultCreateToken = await factory.createToken("name", "RARI", "https://ipfs.rarible.com", "https://ipfs.rarible.com", [], salt, {from: tokenOwner, gasPrice: 0});
       truffleAssert.eventEmitted(resultCreateToken, 'Create721RaribleUserProxy', (ev) => {
         proxy = ev.proxy;
         return true;
