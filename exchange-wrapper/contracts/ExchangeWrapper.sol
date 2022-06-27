@@ -35,15 +35,6 @@ contract ExchangeWrapper is OwnableUpgradeable {
         bytes data;
     }
 
-//    function __ExchangeWrapper_init(
-//        IWyvernExchange _wyvernExchange,
-//        IExchangeV2 _exchangeV2
-//    ) external initializer {
-//        __Context_init_unchained();
-//        __Ownable_init_unchained();
-//        wyvernExchange = _wyvernExchange;
-//        exchangeV2 = _exchangeV2;
-//    }
     function __ExchangeWrapper_init(
         IWyvernExchange _wyvernExchange,
         IExchangeV2 _exchangeV2,
