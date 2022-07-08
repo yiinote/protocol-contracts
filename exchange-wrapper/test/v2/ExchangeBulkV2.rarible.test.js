@@ -179,11 +179,16 @@ contract("ExchangeBulkV2, sellerFee + buyerFee =  6%,", accounts => {
       }
 
       const fulfillment1 = {
-          offerComponents: [ { orderIndex: 0, itemIndex: 0 } ],
-          considerationComponents: [ { orderIndex: 1, itemIndex: 0 } ]
+        offerComponents: [ { orderIndex: 0, itemIndex: 0 } ],
+        considerationComponents: [ { orderIndex: 1, itemIndex: 0 } ]
       }
 
-      const tx = await seaport.matchOrders([orderLeft, orderRight], fulfillment1, {from: buyerLocal1, value: 2000})
+      const fulfillment2 = {
+        offerComponents: [ { orderIndex: 1, itemIndex: 0 } ],
+        considerationComponents: [ { orderIndex: 0, itemIndex: 0 } ]
+      }
+
+      const tx = await seaport.matchOrders([orderLeft, orderRight], [fulfillment1, fulfillment2], {from: buyerLocal1, value: 2000})
       console.log("SEAPORT: ETH <=> ERC721", tx.receipt.gasUsed)
       assert.equal(await token.balanceOf(seller), 0);
       assert.equal(await token.balanceOf(thirdPartAccount), 1);
