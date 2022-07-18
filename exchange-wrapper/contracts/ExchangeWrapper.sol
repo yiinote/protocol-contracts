@@ -33,7 +33,7 @@ contract ExchangeWrapper is OwnableUpgradeable {
     }
 
     struct PurchaseDetails {
-        Markets marketId;
+        Markets marketId; //todo think about idea make it uint256 where uint96 + addressMarketPlace
         uint256 amount;
         bytes data;
     }

@@ -145,6 +145,14 @@ library LibSeaPort {
         bytes signature;
     }
 
+    struct AdvancedOrder {
+        OrderParameters parameters;
+        uint120 numerator;
+        uint120 denominator;
+        bytes signature;
+        bytes extraData;
+    }
+
     struct OfferItem {
         ItemType itemType;
         address token;
@@ -256,4 +264,20 @@ library LibSeaPort {
         address payable recipient;
     }
 
+    struct CriteriaResolver {
+        uint256 orderIndex;
+        Side side;
+        uint256 index;
+        uint256 identifier;
+        bytes32[] criteriaProof;
+    }
+
+    // prettier-ignore
+    enum Side {
+        // 0: Items that can be spent
+        OFFER,
+
+        // 1: Items that must be received
+        CONSIDERATION
+    }
 }

@@ -142,4 +142,33 @@ contract WrapperHelper {
     ) external pure returns(bytes memory _data) {
         _data = abi.encodeWithSelector(ISeaPort.matchOrders.selector, _orders, _fulfillments);
     }
+
+    function getDataSeaPortFulfillAdvancedOrder(
+        LibSeaPort.AdvancedOrder calldata _advancedOrder,
+        LibSeaPort.CriteriaResolver[] calldata _criteriaResolvers,
+        bytes32 _fulfillerConduitKey,
+        address _recipient
+    ) external pure returns(bytes memory _data) {
+        _data = abi.encodeWithSelector(ISeaPort.fulfillAdvancedOrder.selector, _advancedOrder, _criteriaResolvers, _fulfillerConduitKey, _recipient);
+    }
+
+    //todo use struct instead set parameters
+    function getDataSeaPortFulfillAvailableAdvancedOrders(
+        LibSeaPort.AdvancedOrder[] calldata _orders,
+        LibSeaPort.FulfillmentComponent[][] calldata _offerFulfillments,
+        LibSeaPort.FulfillmentComponent[][] calldata _considerationFulfillments,
+        bytes32 _fulfillerConduitKey,
+        address _recipient,
+        uint256 _maximumFulfilled
+    ) external pure returns(bytes memory _data) {
+        _data = abi.encodeWithSelector(
+            ISeaPort.fulfillAvailableAdvancedOrders.selector,
+            _orders,
+            _offerFulfillments,
+            _considerationFulfillments,
+            _fulfillerConduitKey,
+            _recipient,
+            _maximumFulfilled
+        );
+    }
 }
