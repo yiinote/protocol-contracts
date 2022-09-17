@@ -7,6 +7,7 @@
             "auction",
             "custom-matchers",
             "deploy",
+            "deploy-dolphin",
             "exchange-v2",
             "gas-usage-tests",
             "exchange-wrapper",

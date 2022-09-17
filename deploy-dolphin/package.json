@@ -1,5 +1,5 @@
 {
-  "name": "@rarible/deploy",
+  "name": "@rarible/deploy-dolphin",
   "version": "0.0.2",
   "description": "package with all migrations to deploy other packages",
   "access": "public",
