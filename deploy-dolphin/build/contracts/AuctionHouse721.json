@@ -50056,6 +50056,12 @@
       "address": "0x415a59308893c97b25755dF94f87A61066B9C53C",
       "transactionHash": "0x886a7a5222e2e076fb74830c3ef0bf06f43f9248c16efc811de0a6b543777120"
     },
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x275B4503E60fd7C34D3b6fb29f90d3537202C681",
+      "transactionHash": "0x22b7a7dee8f096b380b0bbcbc174be05ac8aedc0b04975e9bd4896607b77d8f9"
+    },
     "200500": {
       "events": {},
       "links": {},
@@ -50069,8 +50075,8 @@
       "transactionHash": "0xf44d78292d99c0d577a80abb05fe2ff41f021128b65883ec33302a76b9b6c649"
     }
   },
-  "schemaVersion": "3.4.3",
-  "updatedAt": "2022-09-16T13:21:52.443Z",
+  "schemaVersion": "3.4.5",
+  "updatedAt": "2022-09-17T02:48:33.915Z",
   "networkType": "ethereum",
   "devdoc": {
     "details": "contract to create and interact with auctions",

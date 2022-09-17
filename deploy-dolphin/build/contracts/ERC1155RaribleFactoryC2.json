@@ -18206,6 +18206,58 @@
       "address": "0x5D447a1b2aAd972D4b0A47A3Ef31180a934612fA",
       "transactionHash": "0xa515f61660df6182a22f73fea356dd68f7b9f62c593de5d3befaa3e612e51a11"
     },
+    "5777": {
+      "events": {
+        "0x7d676ffa0eb839c909c4588fca6dd0076b4036f58e821b53b7d754c0e4b9a4d0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "proxy",
+              "type": "address"
+            }
+          ],
+          "name": "Create1155RaribleProxy",
+          "type": "event"
+        },
+        "0x5b961e37212df9fe72e2c84d894099793a4569a883f97d6413c4362e68c644b5": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "proxy",
+              "type": "address"
+            }
+          ],
+          "name": "Create1155RaribleUserProxy",
+          "type": "event"
+        },
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x555c95a8ee39Ce51756c7c6248c74aE40412da45",
+      "transactionHash": "0xc133ce51cffa0e8ceb60fddb7235b2b8f036ea4df34357b612e8722ef525fd02"
+    },
     "80001": {
       "events": {},
       "links": {},
@@ -18283,8 +18335,8 @@
       "transactionHash": "0xcf4e0f25a04bed18f25c83c9044d4042e8647efe7b49e147e72530d018d23ab9"
     }
   },
-  "schemaVersion": "3.4.3",
-  "updatedAt": "2022-09-16T13:19:32.038Z",
+  "schemaVersion": "3.4.5",
+  "updatedAt": "2022-09-17T02:48:23.564Z",
   "networkType": "ethereum",
   "devdoc": {
     "details": "This contract is for creating proxy to access ERC1155Rarible token. The beacon should be initialized before call ERC1155RaribleFactoryC2 constructor.",

@@ -4287,8 +4287,8 @@
       "transactionHash": "0xa70f1f02a7db9ed146ea0f528e9e8f2281199b05ac42f81d47d24d594aa674de"
     }
   },
-  "schemaVersion": "3.4.3",
-  "updatedAt": "2022-09-16T13:17:05.331Z",
+  "schemaVersion": "3.4.5",
+  "updatedAt": "2022-09-17T02:48:05.309Z",
   "networkType": "ethereum",
   "devdoc": {
     "details": "anyone can mint token.",

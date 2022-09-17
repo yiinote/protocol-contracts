@@ -516,6 +516,45 @@
     "version": "0.7.6+commit.7338295f.Emscripten.clang"
   },
   "networks": {
+    "5777": {
+      "events": {
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event"
+        },
+        "0xbc7cd75a20ee27fd9adebab32041f755214dbc6bffa90cc0225b39da2e5c2d3b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "implementation",
+              "type": "address"
+            }
+          ],
+          "name": "Upgraded",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xC6731E9C00f7001fcFd8245bCDFA12367602f239",
+      "transactionHash": "0x2cec58465146f33c47994ad8dd6b43c5abe8361ef5ccd78e702dd7fe38d434d5"
+    },
     "200501": {
       "events": {},
       "links": {},
@@ -601,8 +640,8 @@
       "transactionHash": "0xda8b8e4135c04ef58ff35adbdf86e283ae3f3e4d79c8a6d837328ba4351ea0e5"
     }
   },
-  "schemaVersion": "3.4.3",
-  "updatedAt": "2022-09-16T13:20:31.891Z",
+  "schemaVersion": "3.4.5",
+  "updatedAt": "2022-09-17T02:48:29.702Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

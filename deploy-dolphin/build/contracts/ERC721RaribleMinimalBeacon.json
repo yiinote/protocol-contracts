@@ -55,7 +55,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -68,7 +69,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -754,6 +756,45 @@
       "address": "0x3EAA06308C859fC35A17b7944f20f14872462d3D",
       "transactionHash": "0xb8de7398835c2c0b907e91427759d85e1e65703fa910252b7f631f9d521b4ac9"
     },
+    "5777": {
+      "events": {
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event"
+        },
+        "0xbc7cd75a20ee27fd9adebab32041f755214dbc6bffa90cc0225b39da2e5c2d3b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "implementation",
+              "type": "address"
+            }
+          ],
+          "name": "Upgraded",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x853133b8a802a0A30C9F3450465812217f0cD34c",
+      "transactionHash": "0x438f418027db183905f394f56bc12242ba2013289d92f308b4b4fec86c8a433b"
+    },
     "80001": {
       "events": {
         "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
@@ -878,8 +919,8 @@
       "transactionHash": "0xda8b8e4135c04ef58ff35adbdf86e283ae3f3e4d79c8a6d837328ba4351ea0e5"
     }
   },
-  "schemaVersion": "3.4.3",
-  "updatedAt": "2022-09-16T13:20:31.862Z",
+  "schemaVersion": "3.4.5",
+  "updatedAt": "2022-09-17T02:48:29.689Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

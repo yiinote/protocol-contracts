@@ -1534,8 +1534,8 @@
     "version": "0.7.6+commit.7338295f.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.4.3",
-  "updatedAt": "2022-09-16T12:41:29.276Z",
+  "schemaVersion": "3.4.5",
+  "updatedAt": "2022-09-17T02:27:27.596Z",
   "devdoc": {
     "details": "library that works with data field of Bid struct",
     "kind": "dev",

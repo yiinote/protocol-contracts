@@ -52445,6 +52445,58 @@
       "address": "0xBa1a8691Ac46b9F622765cdD18AC54aF745bb87C",
       "transactionHash": "0xc3292b2839ae8e0359f6cbdee3969f35b311a21b8ea0f0d8ee7eaca60dcb60b1"
     },
+    "5777": {
+      "events": {
+        "0xcc54b89ca2d75d5612023b14f0a477212b0e08bc0c5b8ad2804e2f8e2e401fc0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "bool",
+              "name": "result",
+              "type": "bool"
+            }
+          ],
+          "name": "Execution",
+          "type": "event"
+        },
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event"
+        },
+        "0x0e2fb031ee032dc02d8011dc50b816eb450cf856abd8261680dac74f72165bd2": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "bool",
+              "name": "paused",
+              "type": "bool"
+            }
+          ],
+          "name": "Paused",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x9C762CF5f77BB09BB8C49CfFAf033Afb6EAb511a",
+      "transactionHash": "0x26f1312085e2fc43bc1d7f63732b8402ca63a7ef040ffd0d291edd84a69c5366"
+    },
     "200500": {
       "events": {},
       "links": {},
@@ -52464,8 +52516,8 @@
       "transactionHash": "0x045eaec599b81244ffba790df2a9eba071c7c6f2a4a1f86d54a80edd6399840e"
     }
   },
-  "schemaVersion": "3.4.3",
-  "updatedAt": "2022-09-16T13:28:04.166Z",
+  "schemaVersion": "3.4.5",
+  "updatedAt": "2022-09-17T02:48:39.074Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
