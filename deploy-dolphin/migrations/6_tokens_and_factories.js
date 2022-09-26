@@ -34,7 +34,7 @@ module.exports = async function (deployer, network) {
   }
 
   //deploying erc721 proxy
-  const erc721Proxy = await deployProxy(ERC721Rarible, ["Rarible", "RARI", "ipfs:/", "", transferProxy, erc721LazyMintTransferProxy], { deployer, initializer: '__ERC721Rarible_init' });
+  const erc721Proxy = await deployProxy(ERC721Rarible, ["YiiNote", "NOTE", "ipfs:/", "", transferProxy, erc721LazyMintTransferProxy], { deployer, initializer: '__ERC721Rarible_init' });
   console.log("deployed erc721 at", erc721Proxy.address)
 
   //deploying erc712 factory
@@ -48,7 +48,7 @@ module.exports = async function (deployer, network) {
 
 async function deployERC1155(erc1155toDeploy, beaconToDeploy, transferProxy, erc1155LazyMintTransferProxy, deployer, network) {
   //deploying erc1155 proxy
-  const erc1155Proxy = await deployProxy(erc1155toDeploy, ["Rarible", "RARI", "ipfs:/", "", transferProxy, erc1155LazyMintTransferProxy], { deployer, initializer: '__ERC1155Rarible_init' });
+  const erc1155Proxy = await deployProxy(erc1155toDeploy, ["YiiNote", "NOTE", "ipfs:/", "", transferProxy, erc1155LazyMintTransferProxy], { deployer, initializer: '__ERC1155Rarible_init' });
   console.log("deployed erc1155 at", erc1155Proxy.address)
 
   //deploying erc1155 factory

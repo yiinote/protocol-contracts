@@ -37,7 +37,7 @@ async function deployERC721Minimal(erc721toDeploy, beacon, deployer, network) {
   const erc721LazyMintTransferProxy = (await ERC721LazyMintTransferProxy.deployed()).address;
 
   //deploying erc721 minimal
-  const erc721Proxy = await deployProxy(erc721toDeploy, ["Rarible", "RARI", "ipfs:/", "", transferProxy, erc721LazyMintTransferProxy], { deployer, initializer: '__ERC721Rarible_init' });
+  const erc721Proxy = await deployProxy(erc721toDeploy, ["YiiNote", "NOTE", "ipfs:/", "", transferProxy, erc721LazyMintTransferProxy], { deployer, initializer: '__ERC721Rarible_init' });
   console.log("deployed erc721 minimal at", erc721Proxy.address)
 
   const erc721minimal = await getProxyImplementation(erc721toDeploy, network, ProxyAdmin)

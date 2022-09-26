@@ -5,6 +5,7 @@ const { getSettings } = require("./config.js")
 
 module.exports = async function (deployer, network) {
   const settings = getSettings(network)
+  console.log('settings', network, settings) // Dolphin
   const royaltiesRegistry = await RoyaltiesRegistry.deployed();
 
   await setV2LegacyProvider(deployer, royaltiesRegistry, settings)
