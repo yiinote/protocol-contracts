@@ -76,10 +76,10 @@ const polygon_dev = {
   deploy_WETH: true
 }
 const def = {
-  communityWallet: "0xfb571F9da71D1aC33E069571bf5c67faDCFf18e4",
+  communityWallet: "0xcF6a9ada6F6F58ff2F9F7C43f8Bec8609F437159",
   deploy_legacy: false,
-  beneficiary: "0xfb571F9da71D1aC33E069571bf5c67faDCFf18e4",
-  buyerFeeSigner: "0xfb571F9da71D1aC33E069571bf5c67faDCFf18e4",
+  beneficiary: "0xcF6a9ada6F6F58ff2F9F7C43f8Bec8609F437159",
+  buyerFeeSigner: "0xcF6a9ada6F6F58ff2F9F7C43f8Bec8609F437159",
   "rarible_token_legacy": {
     name: "Rarible",
     symbol: "RARI",
