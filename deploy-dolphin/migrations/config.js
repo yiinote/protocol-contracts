@@ -155,7 +155,7 @@ async function getProxyImplementation(proxy, network, ProxyAdmin) {
     json = require(`../.openzeppelin/${network}.json`)
   } catch (e) {
     const tconfig = require('../truffle-config.js')
-    console.log(tconfig)
+    // console.log(tconfig) // TODO
     const network_id = tconfig.networks[network].network_id;
     json = require(`../.openzeppelin/unknown-${network_id}.json`)
   }

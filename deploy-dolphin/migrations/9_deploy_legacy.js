@@ -12,7 +12,7 @@ let MintableToken = artifacts.require("MintableToken.sol");
 
 module.exports = async function (deployer, network) {
   const settings = getSettings(network);
-  console.log(settings)
+  // console.log(settings) // TODO
 
   if (!settings.deploy_legacy) {
     return;
