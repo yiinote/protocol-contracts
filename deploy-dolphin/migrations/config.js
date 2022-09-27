@@ -8,7 +8,7 @@ const rinkeby = {
     ],
     artblocksAddress: "0xfb571F9da71D1aC33E069571bf5c67faDCFf18e4"
   },
-  communityWallet: "0xe627243104a101ca59a2c629adbcd63a782e837f",
+  communityWallet: "0xcF6a9ada6F6F58ff2F9F7C43f8Bec8609F437159",
   deploy_CryptoPunks: false,
   address_CryptoPunks: "0xAf2584A8B198f5d0b360B95d92AEC852F7902e52",
   deploy_non_meta: true,
