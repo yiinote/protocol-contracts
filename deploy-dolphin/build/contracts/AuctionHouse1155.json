@@ -50513,7 +50513,7 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x890447056424c32a872b6387D79De007859505CA",
+      "address": "0x323505323785C0e6fC490Ee4f27a9F3FCB7D5DA0",
       "transactionHash": "0x48956e434e10b3228f22891dc1f4563325ff29f55fc123f88d59f3a39ce0ea2a"
     },
     "200500": {
@@ -50530,7 +50530,7 @@
     }
   },
   "schemaVersion": "3.4.5",
-  "updatedAt": "2022-09-17T02:48:33.932Z",
+  "updatedAt": "2022-09-26T02:49:54.788Z",
   "networkType": "ethereum",
   "devdoc": {
     "details": "contract to create and interact with auctions",
