@@ -12,6 +12,7 @@ try {
 
 function createNetwork(name) {
   try {
+    console.log('createNetwork', name);
     var json = require(os.homedir() + "/.ethereum/" + name + ".json");
     var gasPrice = json.gasPrice != null ? json.gasPrice : 2000000000;
 
@@ -29,7 +30,8 @@ function createNetwork(name) {
       },
       from: json.address,
       gas: 8000000,
-      gasPrice: gasPrice + "000000000",
+      // gasPrice: gasPrice + "000000000",
+      gasPrice: gasPrice,
       network_id: json.network_id,
       skipDryRun: true,
       networkCheckTimeout: 500000
@@ -85,3 +87,5 @@ module.exports = {
     }
   }
 }
+
+console.log('exports', module.exports)
