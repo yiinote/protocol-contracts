@@ -34,8 +34,9 @@ function createNetwork(name) {
       gasPrice: gasPrice,
       network_id: json.network_id,
       skipDryRun: true,
-      networkCheckTimeout: 5000000,
-      timeoutBlocks: 200
+      networkCheckTimeout: 1000000,
+      timeoutBlocks: 2000,
+      deploymentPollingInterval: 8000
     };
   } catch (e) {
     return null;
@@ -45,7 +46,11 @@ function createNetwork(name) {
 function createProvider(address, key, url) {
   // console.log("creating provider for address: " + address);
   var HDWalletProvider = require("@truffle/hdwallet-provider");
-  return new HDWalletProvider(key, url);
+  return new HDWalletProvider({
+    mnemonic: key,
+    providerOrUrl: url,
+    pollingInterval: 8000
+  });
 }
 
 module.exports = {
