@@ -36,7 +36,8 @@ function createNetwork(name) {
       skipDryRun: true,
       networkCheckTimeout: 1000000,
       timeoutBlocks: 2000,
-      deploymentPollingInterval: 8000
+      pollingInterval: 1800000,
+      disableConfirmationListener: true
     };
   } catch (e) {
     return null;
@@ -49,7 +50,6 @@ function createProvider(address, key, url) {
   return new HDWalletProvider({
     mnemonic: key,
     providerOrUrl: url,
-    pollingInterval: 8000
   });
 }
 
