@@ -1,0 +1,588 @@
+{
+  "contractName": "ITransferManager",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"@rarible/transfer-manager/contracts/interfaces/ITransferManager.sol\":\"ITransferManager\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@rarible/lib-asset/contracts/LibAsset.sol\":{\"keccak256\":\"0x5d63bba4747a12a83c5628dba94bf56714b4dcf94f742ff28863034831061c8a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9826768c7f5c5423d9bbf49be50bd21ed2db5374ee47648150e50aa10e3c0151\",\"dweb:/ipfs/Qmex4xCv4MFRfCxMNZzzsKXYAFxbYWQRFsbaHiJfDTozYG\"]},\"@rarible/lib-part/contracts/LibPart.sol\":{\"keccak256\":\"0xd0123f7411573a6a7e1527e0d3901913d7642e504ff240d5b7c5b76a28587def\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://447b449f7f986ecfdea10cbc96ae276877102866353b4f8410fec0bdb357d5ae\",\"dweb:/ipfs/QmatbYwMc1UXCGGH1D9fvgLbLPNdgzBVafYW84B1nJJiRr\"]},\"@rarible/transfer-manager/contracts/interfaces/ITransferExecutor.sol\":{\"keccak256\":\"0xe7f4318d4576876f4fbc273f3602aa0973bc2c63d393b2764789edc8f8508b7d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7095c7ef181c65fae6376be15585633ce8c48c80950cc2a36c64574ee3c2b70e\",\"dweb:/ipfs/QmeB7Ysoqw9jZSkXBWa9ngm2SCQkpzc84ZUpX1mvbEWhdg\"]},\"@rarible/transfer-manager/contracts/interfaces/ITransferManager.sol\":{\"keccak256\":\"0x08b4df03e90b368e319fad5d9829ddeae056b1fb757a6a7c4e3073a5ae90c7d2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://326c115033d8c0b0c0fa2dd2da121c53d9ce73368a4498ec3c28fa8a8fb5981a\",\"dweb:/ipfs/QmeLt3NRGprZ26qeF3udETP7eayggv9Frex3VVb3c6wyAG\"]},\"@rarible/transfer-manager/contracts/lib/LibDeal.sol\":{\"keccak256\":\"0x3527a66626c4abd29bfbb04cea61903b20f94acbb4d537376d3026c2697905fd\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9d1b10b40ecec177085b73c1a5e8f362992306afd6336919c044400b95eea7a8\",\"dweb:/ipfs/QmWNT6YbR2kcE1Xm1vyMRSbo5HEvfkhku3REBmCsX8Cx4h\"]},\"@rarible/transfer-manager/contracts/lib/LibFeeSide.sol\":{\"keccak256\":\"0xbbb3298e900bd2b0b5bc934fb3e006ff876b8fae6310675e82d35e949e1c039b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4a89218f4574b6819325391df194e287b07c7bf0d8f5f33713cf8f1ea642ab11\",\"dweb:/ipfs/QmRRWsL3jn8y7wRQdJehQU9cFo8UFzDWRf3MpzR2TKb5Fd\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.7.6;\npragma abicoder v2;\n\nimport \"../lib/LibDeal.sol\";\nimport \"./ITransferExecutor.sol\";\n\nabstract contract ITransferManager is ITransferExecutor {\n\n    function doTransfers(\n        LibDeal.DealSide memory left,\n        LibDeal.DealSide memory right,\n        LibDeal.DealData memory dealData\n    ) internal virtual returns (uint totalMakeValue, uint totalTakeValue);\n}",
+  "sourcePath": "@rarible/transfer-manager/contracts/interfaces/ITransferManager.sol",
+  "ast": {
+    "absolutePath": "@rarible/transfer-manager/contracts/interfaces/ITransferManager.sol",
+    "exportedSymbols": {
+      "ITransferExecutor": [
+        24362
+      ],
+      "ITransferManager": [
+        24383
+      ],
+      "LibAsset": [
+        12610
+      ],
+      "LibDeal": [
+        24408
+      ],
+      "LibFeeSide": [
+        24483
+      ],
+      "LibPart": [
+        12667
+      ]
+    },
+    "id": 24384,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 24364,
+        "literals": [
+          "solidity",
+          "0.7",
+          ".6"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:22:144"
+      },
+      {
+        "id": 24365,
+        "literals": [
+          "abicoder",
+          "v2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "56:19:144"
+      },
+      {
+        "absolutePath": "@rarible/transfer-manager/contracts/lib/LibDeal.sol",
+        "file": "../lib/LibDeal.sol",
+        "id": 24366,
+        "nodeType": "ImportDirective",
+        "scope": 24384,
+        "sourceUnit": 24409,
+        "src": "77:28:144",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@rarible/transfer-manager/contracts/interfaces/ITransferExecutor.sol",
+        "file": "./ITransferExecutor.sol",
+        "id": 24367,
+        "nodeType": "ImportDirective",
+        "scope": 24384,
+        "sourceUnit": 24363,
+        "src": "106:33:144",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 24368,
+              "name": "ITransferExecutor",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 24362,
+              "src": "179:17:144",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ITransferExecutor_$24362",
+                "typeString": "contract ITransferExecutor"
+              }
+            },
+            "id": 24369,
+            "nodeType": "InheritanceSpecifier",
+            "src": "179:17:144"
+          }
+        ],
+        "contractDependencies": [
+          24362
+        ],
+        "contractKind": "contract",
+        "fullyImplemented": false,
+        "id": 24383,
+        "linearizedBaseContracts": [
+          24383,
+          24362
+        ],
+        "name": "ITransferManager",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 24382,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "doTransfers",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 24376,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 24371,
+                  "mutability": "mutable",
+                  "name": "left",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 24382,
+                  "src": "234:28:144",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_DealSide_$24402_memory_ptr",
+                    "typeString": "struct LibDeal.DealSide"
+                  },
+                  "typeName": {
+                    "id": 24370,
+                    "name": "LibDeal.DealSide",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 24402,
+                    "src": "234:16:144",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_DealSide_$24402_storage_ptr",
+                      "typeString": "struct LibDeal.DealSide"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 24373,
+                  "mutability": "mutable",
+                  "name": "right",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 24382,
+                  "src": "272:29:144",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_DealSide_$24402_memory_ptr",
+                    "typeString": "struct LibDeal.DealSide"
+                  },
+                  "typeName": {
+                    "id": 24372,
+                    "name": "LibDeal.DealSide",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 24402,
+                    "src": "272:16:144",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_DealSide_$24402_storage_ptr",
+                      "typeString": "struct LibDeal.DealSide"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 24375,
+                  "mutability": "mutable",
+                  "name": "dealData",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 24382,
+                  "src": "311:32:144",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_DealData_$24407_memory_ptr",
+                    "typeString": "struct LibDeal.DealData"
+                  },
+                  "typeName": {
+                    "id": 24374,
+                    "name": "LibDeal.DealData",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 24407,
+                    "src": "311:16:144",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_DealData_$24407_storage_ptr",
+                      "typeString": "struct LibDeal.DealData"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "224:125:144"
+            },
+            "returnParameters": {
+              "id": 24381,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 24378,
+                  "mutability": "mutable",
+                  "name": "totalMakeValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 24382,
+                  "src": "376:19:144",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 24377,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "376:4:144",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 24380,
+                  "mutability": "mutable",
+                  "name": "totalTakeValue",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 24382,
+                  "src": "397:19:144",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 24379,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "397:4:144",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "375:42:144"
+            },
+            "scope": 24383,
+            "src": "204:214:144",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 24384,
+        "src": "141:279:144"
+      }
+    ],
+    "src": "33:387:144"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "@rarible/transfer-manager/contracts/interfaces/ITransferManager.sol",
+      "exportedSymbols": {
+        "ITransferExecutor": [
+          24362
+        ],
+        "ITransferManager": [
+          24383
+        ],
+        "LibAsset": [
+          12610
+        ],
+        "LibDeal": [
+          24408
+        ],
+        "LibFeeSide": [
+          24483
+        ],
+        "LibPart": [
+          12667
+        ]
+      },
+      "license": "MIT"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.7",
+            ".6"
+          ]
+        },
+        "id": 24364,
+        "name": "PragmaDirective",
+        "src": "33:22:144"
+      },
+      {
+        "attributes": {
+          "literals": [
+            "abicoder",
+            "v2"
+          ]
+        },
+        "id": 24365,
+        "name": "PragmaDirective",
+        "src": "56:19:144"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 24409,
+          "absolutePath": "@rarible/transfer-manager/contracts/lib/LibDeal.sol",
+          "file": "../lib/LibDeal.sol",
+          "scope": 24384,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 24366,
+        "name": "ImportDirective",
+        "src": "77:28:144"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 24363,
+          "absolutePath": "@rarible/transfer-manager/contracts/interfaces/ITransferExecutor.sol",
+          "file": "./ITransferExecutor.sol",
+          "scope": 24384,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 24367,
+        "name": "ImportDirective",
+        "src": "106:33:144"
+      },
+      {
+        "attributes": {
+          "abstract": true,
+          "contractDependencies": [
+            24362
+          ],
+          "contractKind": "contract",
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            24383,
+            24362
+          ],
+          "name": "ITransferManager",
+          "scope": 24384
+        },
+        "children": [
+          {
+            "attributes": {},
+            "children": [
+              {
+                "attributes": {
+                  "name": "ITransferExecutor",
+                  "referencedDeclaration": 24362,
+                  "type": "contract ITransferExecutor"
+                },
+                "id": 24368,
+                "name": "UserDefinedTypeName",
+                "src": "179:17:144"
+              }
+            ],
+            "id": 24369,
+            "name": "InheritanceSpecifier",
+            "src": "179:17:144"
+          },
+          {
+            "attributes": {
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "doTransfers",
+              "scope": 24383,
+              "stateMutability": "nonpayable",
+              "virtual": true,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "left",
+                      "scope": 24382,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "struct LibDeal.DealSide",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "LibDeal.DealSide",
+                          "referencedDeclaration": 24402,
+                          "type": "struct LibDeal.DealSide"
+                        },
+                        "id": 24370,
+                        "name": "UserDefinedTypeName",
+                        "src": "234:16:144"
+                      }
+                    ],
+                    "id": 24371,
+                    "name": "VariableDeclaration",
+                    "src": "234:28:144"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "right",
+                      "scope": 24382,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "struct LibDeal.DealSide",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "LibDeal.DealSide",
+                          "referencedDeclaration": 24402,
+                          "type": "struct LibDeal.DealSide"
+                        },
+                        "id": 24372,
+                        "name": "UserDefinedTypeName",
+                        "src": "272:16:144"
+                      }
+                    ],
+                    "id": 24373,
+                    "name": "VariableDeclaration",
+                    "src": "272:29:144"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "dealData",
+                      "scope": 24382,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "struct LibDeal.DealData",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "LibDeal.DealData",
+                          "referencedDeclaration": 24407,
+                          "type": "struct LibDeal.DealData"
+                        },
+                        "id": 24374,
+                        "name": "UserDefinedTypeName",
+                        "src": "311:16:144"
+                      }
+                    ],
+                    "id": 24375,
+                    "name": "VariableDeclaration",
+                    "src": "311:32:144"
+                  }
+                ],
+                "id": 24376,
+                "name": "ParameterList",
+                "src": "224:125:144"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "totalMakeValue",
+                      "scope": 24382,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 24377,
+                        "name": "ElementaryTypeName",
+                        "src": "376:4:144"
+                      }
+                    ],
+                    "id": 24378,
+                    "name": "VariableDeclaration",
+                    "src": "376:19:144"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "totalTakeValue",
+                      "scope": 24382,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 24379,
+                        "name": "ElementaryTypeName",
+                        "src": "397:4:144"
+                      }
+                    ],
+                    "id": 24380,
+                    "name": "VariableDeclaration",
+                    "src": "397:19:144"
+                  }
+                ],
+                "id": 24381,
+                "name": "ParameterList",
+                "src": "375:42:144"
+              }
+            ],
+            "id": 24382,
+            "name": "FunctionDefinition",
+            "src": "204:214:144"
+          }
+        ],
+        "id": 24383,
+        "name": "ContractDefinition",
+        "src": "141:279:144"
+      }
+    ],
+    "id": 24384,
+    "name": "SourceUnit",
+    "src": "33:387:144"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.6+commit.7338295f.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.5",
+  "updatedAt": "2022-10-10T12:08:49.132Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
