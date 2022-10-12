@@ -100,7 +100,7 @@ const def = {
   deploy_WETH: false
 }
 const goerli = {
-  communityWallet: "0xc66d094ed928f7840a6b0d373c1cd825c97e3c7c",
+  communityWallet: "0xcF6a9ada6F6F58ff2F9F7C43f8Bec8609F437159",
   deploy_CryptoPunks: true,
   deploy_meta: false,
   deploy_non_meta: true,

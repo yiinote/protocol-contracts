@@ -1601,7 +1601,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.5",
-  "updatedAt": "2022-10-10T12:50:51.580Z",
+  "updatedAt": "2022-10-10T13:30:50.503Z",
   "devdoc": {
     "details": "contract to add tokenToAuctionId functionality to auctionHouse",
     "kind": "dev",

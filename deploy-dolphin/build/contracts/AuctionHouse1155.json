@@ -50682,15 +50682,15 @@
     "version": "0.7.6+commit.7338295f.Emscripten.clang"
   },
   "networks": {
-    "1337": {
+    "5": {
       "events": {},
       "links": {},
-      "address": "0xeF337161ECBF62De53Bf705f0070Ca39DcbF333F",
-      "transactionHash": "0x12f0b17d4bfea7da4eac78b9e87e8b6b5c9038f96d51d0391866a2a3d8e9c9be"
+      "address": "0x84bCD2ee02A9eb330C007EB351D9CE36E230B288",
+      "transactionHash": "0x9df822c7685c40b81c71d4716b4ab3b85418de92a89eff1927fb06d1184c9824"
     }
   },
   "schemaVersion": "3.4.5",
-  "updatedAt": "2022-10-10T12:51:56.399Z",
+  "updatedAt": "2022-10-11T17:12:02.958Z",
   "networkType": "ethereum",
   "devdoc": {
     "details": "contract to create and interact with auctions",

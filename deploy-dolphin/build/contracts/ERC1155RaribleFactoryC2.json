@@ -17934,15 +17934,15 @@
     "version": "0.7.6+commit.7338295f.Emscripten.clang"
   },
   "networks": {
-    "1337": {
+    "5": {
       "events": {},
       "links": {},
-      "address": "0xa14163604cd9b0cabc25f0e98F5e611301068418",
-      "transactionHash": "0x323ffc51a74a1d7164690e51c7eecd6bffaee521d8f4f33d7ef3123dc2e7207d"
+      "address": "0xF51e74De8575525898a725071b95D26743B90B71",
+      "transactionHash": "0x74c2d9253de489e5e64f49396264e9335a2586829068fbdb8ac94611dc87cade"
     }
   },
   "schemaVersion": "3.4.5",
-  "updatedAt": "2022-10-10T12:51:46.149Z",
+  "updatedAt": "2022-10-11T17:03:26.098Z",
   "networkType": "ethereum",
   "devdoc": {
     "details": "This contract is for creating proxy to access ERC1155Rarible token. The beacon should be initialized before call ERC1155RaribleFactoryC2 constructor.",
